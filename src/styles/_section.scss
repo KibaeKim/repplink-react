@@ -1,0 +1,16 @@
+.section-component {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+@media (min-width: 768px) {
+  .section-component {
+    width: 50vw;
+  }
+
+  .fixed-section {
+    position: sticky;
+    top: 0;
+    align-self: flex-start; /* <-- this is the fix */
+  }
+}

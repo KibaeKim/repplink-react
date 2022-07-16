@@ -1,0 +1,60 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import './section.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flexbox-wrapper {
+  display: flex;
+  overflow: auto;
+  height: 100vh;          /* Not necessary -- for example only */
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  align-self: flex-start; /* <-- this is the fix */
+}
+
+.scrollable {
+  height: 100vh;
+}
+
+.signup-card {
+  height: 100px;
+  width: min(379px, 80%);
+  height: min(613px, 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+form {
+  width: 360px
+}
+
+@media(max-width: 758px) {
+  form {
+    width: 100%
+  }
+}
+
+.center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 456px;
+}
