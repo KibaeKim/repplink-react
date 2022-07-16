@@ -1,6 +1,25 @@
 import './styles/App.scss';
 import Section from './components/Section';
 
+function handleSubmit() {
+  const email = document.getElementById('email').value;
+  const url = document.getElementById('url').value;
+
+  if (!email && !url) {
+    alert('Please enter an email and your Shopify store url');
+  } else if (!email) {
+    alert('Please enter an email');
+  } else if (!url) {
+    alert('Please your shopify email');
+  } else {
+    document.getElementById('email').value = '';
+    document.getElementById('url').value = '';
+    alert(
+      'Thanks for signing up. We will send you an email regarding your next actions!'
+    );
+  }
+}
+
 function App() {
   return (
     <>
@@ -10,21 +29,26 @@ function App() {
             <div className="d-flex center-children">
               <div className="card signup-card">
                 <div className="d-flex flex-column justify-content-center align-items-center">
-                  <form className="d-flex flex-column mb-4">
+                  <form onSubmit={handleSubmit} className="d-flex flex-column">
                     <label for="email">Email</label>
                     <input
                       className="form-control"
                       name="email"
                       placeholder="name@repplink.com"
+                      id="email"
                     ></input>
-                  </form>
-                  <form className="d-flex flex-column">
-                    <label for="email">Shopify Store URL</label>
+                    <label className="mt-4" for="email">
+                      Shopify Store URL
+                    </label>
                     <input
                       className="form-control"
                       name="email"
                       placeholder="repplink.com"
+                      id="url"
                     ></input>
+                    <button className="btn btn-primary mt-4" type="submit">
+                      Submit
+                    </button>
                   </form>
                 </div>
               </div>
@@ -40,12 +64,6 @@ function App() {
                 today!
               </h2>
             </div>
-          </Section>
-          <Section className="section-component" color="#DC3545" opacity="78%">
-            Test2
-          </Section>
-          <Section className="section-component" color="#0D6EFD" opacity="78%">
-            Test2
           </Section>
         </div>
       </div>

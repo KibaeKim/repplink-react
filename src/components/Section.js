@@ -7,8 +7,6 @@ function Section(props) {
     backgroundOpacity: props.opactity || '100%',
   };
 
-  console.log(props.bgColor);
-
   return (
     <div style={styles} className="section-component">
       {props.children}
